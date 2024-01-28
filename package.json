@@ -10,7 +10,8 @@
     "lint:test": "next lint --no-cache",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "format:test": "prettier --check --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "sca:fix": "npm run lint && npm run format"
+    "sca:fix": "npm run lint && npm run format",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "14.1.0",
