@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { MdMenu } from "react-icons/md";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
+import ThemeChanger from "@/components/theme/theme-changer";
+import ThemeProvider from "@/components/theme/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +18,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <header className="flex h-10 flex-row justify-between px-5 py-1">
+            <div className="flex items-center gap-x-10">
+              <MdMenu />
+              <h4>Component Samples</h4>
+            </div>
+            <div className="flex items-center gap-x-5">
+              <ThemeChanger />
+            </div>
+          </header>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
