@@ -1,3 +1,5 @@
+import "server-only";
+
 import "@/styles/globals.css";
 import AppHeader from "@/components/header/app-header";
 import { CommonParams } from "@/types/common/type";

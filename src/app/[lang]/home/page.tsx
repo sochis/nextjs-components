@@ -1,3 +1,5 @@
+import "server-only";
+
 import { getDictionary } from "@/i18n/dictionaries";
 
 interface HomeParams {

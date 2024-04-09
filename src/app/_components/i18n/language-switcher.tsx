@@ -13,15 +13,11 @@ export function LocaleSwitcher() {
     const pattern = new RegExp(regex.source.replace(/lang/, localePattern));
 
     const match = pathname.match(pattern);
-
     if (match) {
-      const path = pathname.match(pattern);
-      if (match) {
-        const path = match[match.length - 1] || "";
-        router.push(`/${locale}${path}`);
-      } else {
-        console.log("language is not changed.");
-      }
+      const path = match[match.length - 1] || "";
+      router.push(`/${locale}${path}`);
+    } else {
+      console.log("language is not changed.");
     }
   }
 
