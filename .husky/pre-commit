@@ -1,5 +1,5 @@
 # Check lint for app.
-npm run lint:test
+npm run lint
 
 #Check format for app.
-npm run format:test
+npm run format
