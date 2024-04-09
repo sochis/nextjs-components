@@ -4,6 +4,7 @@ import { MdMenu } from "react-icons/md";
 import ThemeChanger from "../theme/theme-changer";
 import { getDictionary } from "@/i18n/dictionaries";
 import { CommonParams } from "@/types/common/type";
+import { LocaleSwitcher } from "@/components/i18n/language-switcher";
 
 export default async function AppHeader({
   params,
@@ -17,6 +18,7 @@ export default async function AppHeader({
         <h4>{dict.title}</h4>
       </div>
       <div className="flex items-center gap-x-5">
+        <LocaleSwitcher />
         <ThemeChanger />
       </div>
     </header>
