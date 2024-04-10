@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { MdLightMode, MdModeNight } from "react-icons/md";
+import { GrSystem } from "react-icons/gr";
 
 export default function ThemeChanger() {
   const [mounted, setMounted] = useState(false);
@@ -19,13 +20,17 @@ export default function ThemeChanger() {
 
   return (
     <div>
-      {theme === "dark" ? (
-        <button onClick={() => setTheme("light")}>
+      {theme === "light" ? (
+        <button onClick={() => setTheme("dark")}>
+          <MdLightMode />
+        </button>
+      ) : theme === "dark" ? (
+        <button onClick={() => setTheme("system")}>
           <MdModeNight />
         </button>
       ) : (
-        <button onClick={() => setTheme("dark")}>
-          <MdLightMode />
+        <button onClick={() => setTheme("light")}>
+          <GrSystem />
         </button>
       )}
     </div>

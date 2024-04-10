@@ -30,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang={params.lang} suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider attribute="class" disableTransitionOnChange enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
