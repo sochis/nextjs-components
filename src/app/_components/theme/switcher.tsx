@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { MdLightMode, MdModeNight } from "react-icons/md";
 import { GrSystem } from "react-icons/gr";
 
-export default function ThemeChanger() {
+export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

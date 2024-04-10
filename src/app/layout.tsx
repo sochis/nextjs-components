@@ -3,7 +3,8 @@ import "server-only";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-import ThemeProvider from "@/components/theme/theme-provider";
+import ThemeProvider from "@/app/_components/theme/provider";
+import UIProviders from "@/components/ui-library/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
     <html lang={params.lang} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" disableTransitionOnChange enableSystem>
-          {children}
+          <UIProviders>{children}</UIProviders>
         </ThemeProvider>
       </body>
     </html>

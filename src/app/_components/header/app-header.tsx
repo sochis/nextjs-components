@@ -1,7 +1,7 @@
 import "server-only";
 
 import { MdMenu } from "react-icons/md";
-import ThemeChanger from "../theme/theme-changer";
+import ThemeSwitcher from "../theme/switcher";
 import { getDictionary } from "@/i18n/dictionaries";
 import { CommonParams } from "@/types/common/type";
 import { LocaleSwitcher } from "@/components/i18n/language-switcher";
@@ -19,7 +19,7 @@ export default async function AppHeader({
       </div>
       <div className="flex items-center gap-x-5">
         <LocaleSwitcher />
-        <ThemeChanger />
+        <ThemeSwitcher />
       </div>
     </header>
   );
