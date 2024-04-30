@@ -27,3 +27,9 @@ Mainly use UI libraries.
 Based on offitial nextjs internationalization.
 
 - https://nextjs.org/docs/app/building-your-application/routing/internationalization
+
+## API
+
+Based on offitial nextjs route handler.
+
+- https://nextjs.org/docs/app/building-your-application/routing/route-handlers
