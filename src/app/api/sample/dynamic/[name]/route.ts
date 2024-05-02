@@ -25,9 +25,8 @@ export async function POST(
   request: Request,
   { params }: { params: { name: string } },
 ): Promise<Response> {
-  const formData = await request.formData();
-  const age = formData.get("age");
-  const body = { name: params.name, age: age };
+  const payload = await request.json();
+  const body = { name: params.name, age: payload.age };
 
   return new Response(JSON.stringify(body), {
     status: 200,
