@@ -1,0 +1,126 @@
+@Library('jenkins-shared-library@main')
+
+def conf = utils.readConfigYamlBeforehand('ci/jekins/config.yaml', 'executor')
+def appModified = []
+def nextApiModified = []
+
+pipeline {
+  agent {
+    docker {
+      label 'executor'
+      image conf.infra.docker.nodeImage
+      args '-u root'
+    }
+  }
+  options {
+    buildDiscarder(logRotator(artifactNumToKeepStr: '10'))
+
+    timestamps()
+    timeout(
+      time: conf.pipeline.timeout.time,
+      unit: conf.pipeline.timeout.unit
+    )
+  }
+  stages {
+    stage('Precondition') {
+      steps {
+        script {
+          appModified = files.getTargetFiles("", conf.develop.nextjs_dir, ["ts", "js"])
+          sleep 5
+          nextApiModified = files.getTargetFiles("", conf.develop.nextjs_dir, ["ts", "js"])
+          sh 'npm ci'
+        }
+      }
+    }
+    stage('Production Build') {
+      options {
+        timeout(
+          time: conf.build.timeout.time,
+          unit: conf.build.timeout.unit
+        )
+      }
+      when {
+        expression { return conf.build.app.enables }
+      }
+      steps {
+        script {
+          sh 'npm run build'
+        }
+      }
+    }
+    stage('Static Code Analysis For Application') {
+      options {
+        timeout(
+          time: conf.static_code_analysis_app.whole.timeout.time,
+          unit: conf.static_code_analysis_app.whole.timeout.unit
+        )
+      }
+      when {
+        expression { return appModified }
+      }
+      parallel {
+        stage('Prettier') {
+          when {
+            expression { return conf.static_code_analysis_app.prettier.enabled }
+          }
+          steps {
+            script {
+              sh 'npm run format'
+            }
+          }
+        }
+        stage('Eslint') {
+          when {
+            expression { return conf.static_code_analysis_app.eslint.enabled }
+          }
+          steps {
+            script {
+              sh 'npm run lint'
+            }
+          }
+        }
+      }
+    }
+    stage('Unit Tests') {
+      options {
+        timeout(
+          time: conf.unit_test.whole.timeout.time,
+          unit: conf.unit_test.whole.timeout.unit
+        )
+      }
+      parallel {
+        stage('Application Test') {
+          when {
+            allOf {
+              expression { return appModified }
+              expression { return conf.unit_test.app.enabled }
+            }
+          }
+          steps {
+            script {
+              sh 'npm run test:app'
+            }
+          }
+        }
+        stage('API Test') {
+          when {
+            allOf {
+              expression { return nextApiModified }
+              expression { return conf.unit_test.api.enabled }
+            }
+          }
+          steps {
+            script {
+              sh 'npm run test:api'
+            }
+          }
+        }
+      }
+    }
+  }
+  post {
+    cleanup {
+      cleanWs()
+    }
+  }
+}

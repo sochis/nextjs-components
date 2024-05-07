@@ -1,8 +1,6 @@
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import nextPlugin from "@next/eslint-plugin-next";
-import reactPlugin from "eslint-plugin-react";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 import path from "path";
@@ -23,23 +21,9 @@ export default [
     files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
   },
   { languageOptions: { globals: globals.browser } },
-  ...compat.extends("standard-with-typescript"),
+  ...compat.extends("next"),
+  ...compat.extends("plugin:tailwindcss/recommended"),
   ...tseslint.configs.recommended,
-  pluginReactConfig,
-  {
-    plugins: {
-      react: reactPlugin,
-    },
-    rules: {
-      ...reactPlugin.configs["jsx-runtime"].rules,
-      "@typescript-eslint/no-explicit-any": "off",
-    },
-    setings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
   {
     rules: {
       ...nextPlugin.configs.recommended.rules,

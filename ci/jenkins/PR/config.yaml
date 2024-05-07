@@ -1,0 +1,39 @@
+pipeline:
+  timeout:
+    time: 180
+    unit: "MINUTES"
+
+infra:
+  docker:
+    nodeImage: "node:22-slim"
+
+develop:
+  nextjs_dir: ["src/"]
+  nextjs_api_dir: ["src/app/api"]
+
+static_code_analysis_app:
+  whole:
+    timeout:
+      time: 10
+      unit: "MINUTES"
+  prettier:
+    enabled: true
+  eslint:
+    enabled: true
+
+unit_test:
+  whole:
+    timeout:
+      time: 30
+      unit: "MINUTES"
+  app:
+    enabled: true
+  api:
+    enabled: true
+
+build:
+  timeout:
+    time: 30
+    unit: "MINUTES"
+  app:
+    enabled: true
