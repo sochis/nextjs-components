@@ -4,7 +4,7 @@ import { MdMenu } from "react-icons/md";
 import ThemeSwitcher from "../theme/switcher";
 import { getDictionary } from "@/i18n/dictionaries";
 import { CommonParams } from "@/types/common/type";
-import { LocaleSwitcher } from "@/components/i18n/language-switcher";
+import { LocaleSwitcher } from "@/components/common/i18n/language-switcher";
 
 export default async function AppHeader({
   params,

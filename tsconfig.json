@@ -18,11 +18,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/middleware": ["./src/middleware.ts"],
       "@/components/*": ["./src/app/_components/*"],
       "@/i18n/*": ["./src/app/_i18n/*"],
       "@/styles/*": ["./src/app/_styles/*"],
       "@/types/*": ["./src/app/_types/*"],
+      "@/store/*": ["./src/app/_store/*"],
       "@/api/*": ["./src/app/api/*"]
     }
   },
