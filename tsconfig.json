@@ -24,6 +24,7 @@
       "@/styles/*": ["./src/app/_styles/*"],
       "@/types/*": ["./src/app/_types/*"],
       "@/store/*": ["./src/app/_store/*"],
+      "@/utils/*": ["./src/app/_utils/*"],
       "@/api/*": ["./src/app/api/*"]
     }
   },
