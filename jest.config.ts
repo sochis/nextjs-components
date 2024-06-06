@@ -25,6 +25,7 @@ const config: Config = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
+    "^@/pages/(.*)$": "<rootDir>/src/app/[language]/$1",
     "^@/components/(.*)$": "<rootDir>/src/app/_components/$1",
     "^@/api/(.*)$": "<rootDir>/src/app/api/$1",
   },

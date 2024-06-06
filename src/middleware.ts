@@ -18,7 +18,7 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   let { pathname } = request.nextUrl;
-  pathname = pathname === "/" ? "/home" : pathname;
+  pathname = pathname === "/" ? "/" : pathname;
 
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,

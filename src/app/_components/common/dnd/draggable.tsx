@@ -1,7 +1,8 @@
+import React, { ReactElement } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { DraggableProps } from "@/types/common/dnd/draggable";
 
-export function Draggable(props: DraggableProps): React.ReactElement {
+export default function Draggable(props: DraggableProps): ReactElement {
   const Element = props.element || "div";
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: props.id,
@@ -19,8 +20,8 @@ export function Draggable(props: DraggableProps): React.ReactElement {
 
   return (
     <Element
-      className={props.className}
       ref={setNodeRef}
+      className={props.className}
       style={dynamicStyle}
       {...listeners}
       {...attributes}

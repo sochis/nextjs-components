@@ -2,8 +2,8 @@
 
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import { useDndStore } from "@/store/home";
-import { Draggable } from "@/components/common/dnd/draggable";
-import { Droppable } from "@/components/common/dnd/droppable";
+import Draggable from "@/components/common/dnd/draggable";
+import Droppable from "@/components/common/dnd/droppable";
 
 export default function DndSample({}) {
   const { isDropped, setIsDropped } = useDndStore();

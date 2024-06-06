@@ -1,6 +1,23 @@
 {
-  "title": "Component Samples",
-  "products": {
-    "test": "i18n テスト"
+  "product": {
+    "title": "Component samples",
+    "landing_title": "Conponents Samples"
+  },
+  "common": {
+    "navigation_rail": {
+      "automation_title": "ボタン"
+    }
+  },
+  "main": {
+    "home": {
+      "test": "i18n テスト"
+    }
+  },
+  "landing": {
+    "ip_label": "始めましょう。",
+    "ip_hint": "入力してください。",
+    "ip_description": "あなたの名前を入力してください。",
+    "ip_error_msg": "全ての文字が入力可能です。",
+    "ip_submit": "始める"
   }
 }

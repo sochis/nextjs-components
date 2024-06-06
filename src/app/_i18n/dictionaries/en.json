@@ -1,6 +1,23 @@
 {
-  "title": "Component Samples",
-  "products": {
-    "test": "i18n test"
+  "product": {
+    "title": "Component samples",
+    "landing_title": "Conponents Samples"
+  },
+  "common": {
+    "navigation_rail": {
+      "automation_title": "Button"
+    }
+  },
+  "main": {
+    "home": {
+      "test": "i18n test"
+    }
+  },
+  "landing": {
+    "ip_label": "Who are you?",
+    "ip_hint": "Type here",
+    "ip_description": "Please input your name.",
+    "ip_error_msg": "All words are valid.",
+    "ip_submit": "Start"
   }
 }

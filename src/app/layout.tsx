@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 };
 
 interface StaticParams {
-  lang: string;
+  language: string;
 }
 
 export async function generateStaticParams(): Promise<StaticParams[]> {
-  return [{ lang: "en" }, { lang: "ja" }];
+  return [{ language: "en" }, { language: "ja" }];
 }
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
   params: StaticParams;
 }>) {
   return (
-    <html lang={params.lang} suppressHydrationWarning>
+    <html lang={params.language} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" disableTransitionOnChange enableSystem>
           <UIProviders>{children}</UIProviders>
