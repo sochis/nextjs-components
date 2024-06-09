@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 import { ReactElement } from "react";
 import { NavigationButtonParams } from "@/types/common/button/button";
 
-export function NavigationButton({
+export function TitleButton({
   icon: Icon,
   text,
   onClick,

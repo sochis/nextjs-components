@@ -16,7 +16,13 @@ export interface I18nParams {
   };
   main: {
     home: {
-      test: string;
+      heading: string;
+      topic: string;
+      description1: string;
+      description2: string;
+      description3: string;
+      description4: string;
+      start_button: string;
     };
   };
   landing: {

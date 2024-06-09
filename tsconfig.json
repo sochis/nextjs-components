@@ -20,6 +20,7 @@
     "paths": {
       "@/middleware": ["./src/middleware.ts"],
       "@/pages": ["./src/app/[language]/*"],
+      "@/assets/*": ["./src/app/_assets/*"],
       "@/components/*": ["./src/app/_components/*"],
       "@/i18n/*": ["./src/app/_i18n/*"],
       "@/styles/*": ["./src/app/_styles/*"],

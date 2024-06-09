@@ -5,9 +5,13 @@ import { Link } from "@nextui-org/react";
 export default async function TextLink({
   path,
   text,
-}: Readonly<{ path: string; text: string }>) {
+  className,
+}: Readonly<{ path: string; text: string; className?: string }>) {
   return (
-    <Link className="text-black dark:text-white" href={path}>
+    <Link
+      className={`text-black dark:text-white ${className || ""}`}
+      href={path}
+    >
       {text}
     </Link>
   );

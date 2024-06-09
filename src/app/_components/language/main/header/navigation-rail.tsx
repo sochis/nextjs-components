@@ -1,6 +1,6 @@
 "use client";
 
-import { NavigationButton } from "@/components/common/button/button";
+import { TitleButton } from "@/components/common/button/button";
 import NavigationRail from "@/components/common/navigation-rail/navigation-rail";
 import { I18nParams } from "@/types/language/language";
 import { usePathname, useRouter } from "next/navigation";
@@ -21,10 +21,10 @@ export default function AppNavigationRail({
 
   return (
     <NavigationRail>
-      <NavigationButton
+      <TitleButton
         icon={AiOutlineCode}
         text={dict.common.navigation_rail.automation_title}
-        onClick={() => navigatePage("automation")}
+        onClick={() => navigatePage("button")}
       />
     </NavigationRail>
   );

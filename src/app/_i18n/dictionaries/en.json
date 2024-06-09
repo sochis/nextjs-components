@@ -10,7 +10,13 @@
   },
   "main": {
     "home": {
-      "test": "i18n test"
+      "heading": "Use web components as you wish.",
+      "topic": "Anyone Can Refer to Components",
+      "description1": "This help everyone refer to sample web components.",
+      "description2": "You will be able to see useful components.",
+      "description3": "We provide the ability to search a variety of components.",
+      "description4": "Let's go find it.",
+      "start_button": "Start"
     }
   },
   "landing": {

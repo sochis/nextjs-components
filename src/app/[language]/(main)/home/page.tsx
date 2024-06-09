@@ -1,21 +1,25 @@
 import "server-only";
 
-import { getDictionary } from "@/i18n/dictionaries";
-import DndSample from "@/components/language/home/dnd-sample";
-import RequestSample from "@/components/language/home/request-sample";
-
-interface HomeParams {
-  language: string;
-}
+import Image from "next/image";
+import { LangParams } from "@/types/language/language";
+import ProductImage from "@/assets/images/home/product-image.webp";
+import Introduction from "@/components/language/main/home/introduction";
 
 export default async function Home({
   params,
-}: Readonly<{ params: HomeParams }>) {
-  const dict = await getDictionary(params.language);
+}: Readonly<{
+  params: LangParams;
+}>) {
   return (
-    <main className="flex flex-col items-center justify-between">
-      <RequestSample />
-      <DndSample />
+    <main className="flex flex-row p-24">
+      <Introduction params={params} />
+      <div className="w-1/2 px-24 flex justify-center">
+        <Image
+          className="rounded-3xl"
+          src={ProductImage}
+          alt={"Home Product Image"}
+        />
+      </div>
     </main>
   );
 }

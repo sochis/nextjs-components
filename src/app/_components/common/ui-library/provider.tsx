@@ -3,7 +3,6 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { Theme } from "@radix-ui/themes";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { ChakraProvider } from "@chakra-ui/react";
 
 export default function UIProviders({
   children,
@@ -12,11 +11,9 @@ export default function UIProviders({
 }) {
   return (
     <Theme>
-      <ChakraProvider>
-        <AppRouterCacheProvider>
-          <NextUIProvider>{children}</NextUIProvider>
-        </AppRouterCacheProvider>
-      </ChakraProvider>
+      <AppRouterCacheProvider>
+        <NextUIProvider>{children}</NextUIProvider>
+      </AppRouterCacheProvider>
     </Theme>
   );
 }

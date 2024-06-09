@@ -3,6 +3,7 @@ import "server-only";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import "@radix-ui/themes/styles.css";
 import ThemeProvider from "@/components/common/theme/provider";
 import UIProviders from "@/components/common/ui-library/provider";
 

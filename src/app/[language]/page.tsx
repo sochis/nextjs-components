@@ -10,7 +10,6 @@ export default async function Landing({
   params: LangParams;
 }>) {
   const dict = await getDictionary(params.language);
-  console.log(dict);
 
   return (
     <main className="flex h-screen bg-gradient-to-br from-sky-200 via-sky-200 to-white dark:from-black dark:via-black dark:to-blue-950">
