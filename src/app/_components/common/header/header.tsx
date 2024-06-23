@@ -1,3 +1,4 @@
+import { Divider } from "@nextui-org/react";
 import "server-only";
 
 export default async function AppBar({
@@ -6,8 +7,9 @@ export default async function AppBar({
   children: React.ReactNode;
 }>) {
   return (
-    <header className="flex h-10 flex-row justify-between px-5 sticky top-1 bottom-1 z-50 backdrop-blur-2xl">
-      {children}
+    <header className="flex flex-col h-12 sticky top-0 z-50 backdrop-blur-2xl">
+      <div className="flex flex-row justify-between px-5 py-1">{children}</div>
+      <Divider className="mb-1" />
     </header>
   );
 }

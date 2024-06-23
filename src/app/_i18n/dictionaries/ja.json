@@ -9,6 +9,16 @@
     }
   },
   "main": {
+    "header": {
+      "language": {
+        "tooltip": "言語"
+      },
+      "theme": {
+        "light": "ライトモード",
+        "dark": "ダークモード",
+        "device": "デバイスのモード"
+      }
+    },
     "home": {
       "heading": "望みのコンポーネントを思いのままに",
       "topic": "誰もが参考に出来るWebコンポーネント",

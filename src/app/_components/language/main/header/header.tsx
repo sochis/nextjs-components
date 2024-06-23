@@ -18,8 +18,8 @@ export default async function AppHeader({
         <TextLink path={"home"} text={dict.product.title} />
       </div>
       <div className="flex items-center gap-x-5">
-        <LocaleSwitch params={{ language: params.language }} />
-        <ThemeSwitch />
+        <LocaleSwitch params={{ language: params.language }} dict={dict} />
+        <ThemeSwitch dict={dict} />
       </div>
     </AppBar>
   );

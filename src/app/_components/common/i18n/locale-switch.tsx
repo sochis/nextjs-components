@@ -4,9 +4,12 @@ import { locales } from "@/middleware";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { CommonDropdown } from "@/components/common/dropdown/dropdown";
-import { LangParams } from "@/types/language/language";
+import { I18nParams, LangParams } from "@/types/language/language";
 
-export function LocaleSwitch({ params }: Readonly<{ params: LangParams }>) {
+export function LocaleSwitch({
+  params,
+  dict,
+}: Readonly<{ params: LangParams; dict: I18nParams }>) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -46,6 +49,7 @@ export function LocaleSwitch({ params }: Readonly<{ params: LangParams }>) {
         { key: "en", onClick: () => switchLocale("en"), text: lang_dict.en },
         { key: "ja", onClick: () => switchLocale("ja"), text: lang_dict.ja },
       ]}
+      tooltip={dict.main.header.language.tooltip}
     />
   );
 }

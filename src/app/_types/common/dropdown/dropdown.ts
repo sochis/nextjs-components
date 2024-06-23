@@ -33,4 +33,5 @@ export interface DropdownParams {
     onClick?: React.MouseEventHandler<HTMLLIElement> | undefined;
     text: string;
   }[];
+  tooltip?: string;
 }

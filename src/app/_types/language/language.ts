@@ -15,6 +15,16 @@ export interface I18nParams {
     };
   };
   main: {
+    header: {
+      language: {
+        tooltip: string;
+      };
+      theme: {
+        light: string;
+        dark: string;
+        device: string;
+      };
+    };
     home: {
       heading: string;
       topic: string;

@@ -7,6 +7,7 @@ import {
   Button,
   DropdownMenu,
   DropdownItem,
+  Tooltip,
 } from "@nextui-org/react";
 import React from "react";
 
@@ -16,6 +17,7 @@ export function CommonDropdown({
   button,
   dropdownMenu,
   dropdownItems,
+  tooltip,
 }: DropdownParams) {
   const [selectedKeys, setSelectedKeys] = React.useState<Set<any>>(
     new Set([defaultKey]),
@@ -32,15 +34,19 @@ export function CommonDropdown({
 
   return (
     <Dropdown>
-      <DropdownTrigger>
-        <Button
-          variant={button.variant}
-          size={button.size}
-          className={button.className + " capitalize"}
-        >
-          {selectedValue}
-        </Button>
-      </DropdownTrigger>
+      <Tooltip size="sm" content={tooltip}>
+        <div>
+          <DropdownTrigger>
+            <Button
+              variant={button.variant}
+              size={button.size}
+              className={button.className + " capitalize"}
+            >
+              {selectedValue}
+            </Button>
+          </DropdownTrigger>
+        </div>
+      </Tooltip>
       <DropdownMenu
         variant={dropdownMenu.variant}
         disallowEmptySelection={dropdownMenu.disallowEmptySelection}

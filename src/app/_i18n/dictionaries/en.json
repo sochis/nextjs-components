@@ -9,6 +9,16 @@
     }
   },
   "main": {
+    "header": {
+      "language": {
+        "tooltip": "Language"
+      },
+      "theme": {
+        "light": "Light Mode",
+        "dark": "Dark Mode",
+        "device": "Device Mode"
+      }
+    },
     "home": {
       "heading": "Use web components as you wish.",
       "topic": "Anyone Can Refer to Components",
