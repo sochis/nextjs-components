@@ -1,5 +1,6 @@
 import React from "react";
 import { Input } from "@nextui-org/react";
+import { ValidationInputParams } from "@/types/common/input/input";
 
 export default function ValidationInput({
   isRequired,
@@ -13,19 +14,7 @@ export default function ValidationInput({
   description,
   errorMessage,
   validationBehavior,
-}: {
-  isRequired?: boolean | undefined;
-  className?: string | undefined;
-  type?: string | undefined;
-  label?: React.ReactNode;
-  placeholder?: string | undefined;
-  variant?: "bordered" | "flat" | "faded" | "underlined" | undefined;
-  initialValue?: string;
-  regexp: string | RegExp;
-  description?: React.ReactNode;
-  errorMessage: string;
-  validationBehavior?: "native" | "aria" | undefined;
-}) {
+}: ValidationInputParams) {
   const [value, setValue] = React.useState(initialValue ?? "");
 
   const isInvalid = React.useMemo(() => {

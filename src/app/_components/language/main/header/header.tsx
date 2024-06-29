@@ -1,3 +1,5 @@
+import "server-only";
+
 import { LocaleSwitch } from "@/components/common/i18n/locale-switch";
 import TextLink from "@/components/common/link/link";
 import ThemeSwitch from "@/components/common/theme/switch";

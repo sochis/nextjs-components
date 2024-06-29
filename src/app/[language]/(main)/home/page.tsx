@@ -16,6 +16,7 @@ export default async function Home({
       <div className="w-1/2 px-24 flex justify-center">
         <Image
           className="rounded-3xl"
+          priority
           src={ProductImage}
           alt={"Home Product Image"}
         />
