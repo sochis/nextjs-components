@@ -1,18 +1,21 @@
 import "server-only";
 
 import { Link } from "@nextui-org/react";
+import { TextLinkParams } from "@/types/common/link/link";
 
 export default async function TextLink({
-  path,
-  text,
   className,
-}: Readonly<{ path: string; text: string; className?: string }>) {
+  isExternal,
+  href,
+  children,
+}: Readonly<TextLinkParams>) {
   return (
     <Link
+      isExternal={isExternal}
       className={`text-black dark:text-white ${className || ""}`}
-      href={path}
+      href={href}
     >
-      {text}
+      {children}
     </Link>
   );
 }

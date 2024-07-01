@@ -16,14 +16,14 @@ export default function LeftMenu({
         accordionItems={[
           {
             key: "1",
-            title: "title1",
+            title: "Button",
             children: (
               <NextUIListBox
                 listBoxItems={[
                   {
                     key: "11",
                     "aria-label": "nextui",
-                    children: <>test1</>,
+                    children: <>Simple Button</>,
                   },
                   {
                     key: "12",

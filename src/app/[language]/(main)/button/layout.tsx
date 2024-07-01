@@ -18,7 +18,7 @@ export default async function Layout({
       <div className="w-1/6">
         <LeftMenu dict={dict} />
       </div>
-      <div className="w-5/6 px-24 flex justify-center">{children}</div>
+      <div className="w-5/6">{children}</div>
     </main>
   );
 }
