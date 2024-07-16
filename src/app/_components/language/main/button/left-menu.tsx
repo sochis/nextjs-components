@@ -13,23 +13,20 @@ export default function LeftMenu({
   return (
     <ScrollShadow className="h-[calc(100svh-92px)]">
       <NextUIAccordion
+        showDivider={false}
         selectionMode="multiple"
-        defaultExpandedKeys={["1", "2"]}
+        defaultExpandedKeys={["accordion-item-1", "accordion-item-2"]}
         accordionItems={[
           {
-            key: "1",
-            title: "Button",
+            title: <>{dict.main.button.title}</>,
             children: (
               <NextUIListBox
                 listBoxItems={[
                   {
                     key: "11",
                     "aria-label": "nextui",
-                    children: <>Simple Button</>,
-                  },
-                  {
-                    key: "12",
-                    children: <>test</>,
+                    href: "#simple-button-section",
+                    children: <>{dict.main.button.simple.title}</>,
                   },
                 ]}
               />

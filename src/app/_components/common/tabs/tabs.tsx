@@ -1,5 +1,3 @@
-import "server-only";
-
 import { Tabs } from "@radix-ui/themes";
 import { RadixTabsParams } from "@/types/common/tabs/tabs";
 

@@ -1,5 +1,3 @@
-import "server-only";
-
 import { Chip } from "@nextui-org/react";
 import { ClickableChipParams } from "@/types/common/chip/chip";
 

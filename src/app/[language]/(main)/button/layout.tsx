@@ -14,7 +14,7 @@ export default async function Layout({
   const dict = await getDictionary(params.language);
 
   return (
-    <main className="flex flex-row px-24 py-4">
+    <main className="flex flex-row pl-24 py-4">
       <div className="w-1/6">
         <LeftMenu dict={dict} />
       </div>
