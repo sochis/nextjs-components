@@ -13,6 +13,9 @@ export interface I18nParams {
     navigation_rail: {
       automation_title: string;
     };
+    flow: {
+      input_placeholder: string;
+    };
   };
   main: {
     header: {
@@ -33,6 +36,13 @@ export interface I18nParams {
       description3: string;
       description4: string;
       start_button: string;
+    };
+    button: {
+      title: string;
+      description: string;
+      simple: {
+        title: string;
+      };
     };
   };
   landing: {

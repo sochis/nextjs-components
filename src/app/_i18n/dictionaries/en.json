@@ -6,6 +6,9 @@
   "common": {
     "navigation_rail": {
       "automation_title": "Button"
+    },
+    "flow": {
+      "input_placeholder": "Please input value."
     }
   },
   "main": {
@@ -27,6 +30,13 @@
       "description3": "We provide the ability to search a variety of components.",
       "description4": "Let's go find it.",
       "start_button": "Start"
+    },
+    "button": {
+      "title": "Button",
+      "description": "Here is a list of the button components.",
+      "simple": {
+        "title": "Simple Button"
+      }
     }
   },
   "landing": {

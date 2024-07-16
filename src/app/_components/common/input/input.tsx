@@ -5,20 +5,22 @@ import { ValidationInputParams } from "@/types/common/input/input";
 export default function ValidationInput({
   isRequired,
   className,
+  size,
+  variant,
+  maxLength,
   type,
   label,
   placeholder,
-  variant,
-  initialValue,
+  value,
   regexp,
   description,
   errorMessage,
   validationBehavior,
+  onValueChange,
+  onInput,
 }: ValidationInputParams) {
-  const [value, setValue] = React.useState(initialValue ?? "");
-
   const isInvalid = React.useMemo(() => {
-    if (value === "") return false;
+    if (value === "" || value === undefined) return false;
 
     return value.match(regexp) ? true : false;
   }, [value]);
@@ -27,17 +29,20 @@ export default function ValidationInput({
     <Input
       isRequired={isRequired}
       className={className}
+      size={size}
+      variant={variant}
+      maxLength={maxLength}
       value={value}
       type={type}
       label={label}
       placeholder={placeholder}
-      variant={variant}
       isInvalid={isInvalid}
-      color={isInvalid ? "danger" : "success"}
+      color={isInvalid ? "danger" : "default"}
       description={description}
       errorMessage={errorMessage}
       validationBehavior={validationBehavior ?? "native"}
-      onValueChange={setValue}
+      onValueChange={onValueChange}
+      onInput={onInput}
     />
   );
 }

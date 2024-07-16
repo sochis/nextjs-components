@@ -1,16 +1,11 @@
 import "server-only";
 
-import { I18nParams } from "@/types/language/language";
 import ClickableChip from "@/components/common/chip/chip";
-import TextLink from "@/components/common/link/link";
+import { NextUILink } from "@/components/common/link/link";
 import { Button, Divider } from "@nextui-org/react";
 import { AiOutlineGlobal } from "react-icons/ai";
 
-export default async function NextUIButtonContent({
-  dict,
-}: Readonly<{
-  dict: I18nParams;
-}>) {
+export default async function NextUIButtonContent() {
   return (
     <div className="flex flex-col gap-y-6 pt-3">
       <div className="flex flex-col gap-y-6">
@@ -59,13 +54,13 @@ export default async function NextUIButtonContent({
       </div>
       <Divider />
       <ClickableChip size="sm">
-        <TextLink
+        <NextUILink
           isExternal
           className="text-white text-xs font-semibold"
           href={"https://nextui.org/docs/components/button"}
         >
           Document Link
-        </TextLink>
+        </NextUILink>
       </ClickableChip>
     </div>
   );

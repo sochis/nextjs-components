@@ -13,6 +13,8 @@ export default function LeftMenu({
   return (
     <ScrollShadow className="h-[calc(100svh-92px)]">
       <NextUIAccordion
+        selectionMode="multiple"
+        defaultExpandedKeys={["1", "2"]}
         accordionItems={[
           {
             key: "1",

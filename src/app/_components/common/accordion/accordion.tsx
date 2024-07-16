@@ -6,15 +6,30 @@ import { NextUIAccordionParams } from "@/types/common/accordion/accordion";
 
 export function NextUIAccordion({
   className,
+  defaultExpandedKeys,
+  variant,
+  showDivider,
+  isCompact,
+  selectionMode,
   accordionItems,
 }: NextUIAccordionParams): ReactElement {
   return (
-    <Accordion className={className} isCompact showDivider={false}>
-      {accordionItems.map((item) => (
+    <Accordion
+      defaultExpandedKeys={defaultExpandedKeys}
+      className={className}
+      variant={variant}
+      showDivider={showDivider}
+      isCompact={isCompact}
+      selectionMode={selectionMode}
+    >
+      {accordionItems.map((item, index) => (
         <AccordionItem
-          key={item.key}
+          isCompact
+          className={item.className}
+          key={"accordion-item-" + (index + 1).toString()}
           aria-label={item["aria-label"]}
           title={item.title}
+          textValue={item.textValue}
         >
           {item.children}
         </AccordionItem>

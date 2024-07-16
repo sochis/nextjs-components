@@ -1,7 +1,7 @@
 import "server-only";
 
 import { LocaleSwitch } from "@/components/common/i18n/locale-switch";
-import TextLink from "@/components/common/link/link";
+import { TextLink } from "@/components/common/link/link";
 import ThemeSwitch from "@/components/common/theme/switch";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LangParams } from "@/types/language/language";
@@ -17,7 +17,7 @@ export default async function AppHeader({
     <AppBar>
       <div className="flex items-center gap-x-10">
         <AppNavigationRail dict={dict} />
-        <TextLink href={"home"}>{dict.product.title}</TextLink>{" "}
+        <TextLink href={"home"}>{dict.product.title}</TextLink>
       </div>
       <div className="flex items-center gap-x-5">
         <LocaleSwitch params={{ language: params.language }} dict={dict} />

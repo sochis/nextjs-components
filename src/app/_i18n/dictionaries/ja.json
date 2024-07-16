@@ -6,6 +6,9 @@
   "common": {
     "navigation_rail": {
       "automation_title": "ボタン"
+    },
+    "flow": {
+      "input_placeholder": "値を入力してください。"
     }
   },
   "main": {
@@ -27,6 +30,13 @@
       "description3": "豊富なコンポーネントを検索する機能も提供します。",
       "description4": "さあ、探しに行きましょう。",
       "start_button": "始める"
+    },
+    "button": {
+      "title": "ボタン",
+      "description": "ボタンコンポーネントの一覧を表示します。",
+      "simple": {
+        "title": "シンプルなボタン"
+      }
     }
   },
   "landing": {
