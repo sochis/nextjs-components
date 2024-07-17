@@ -26,7 +26,7 @@ export function NextUIAccordion({
         <AccordionItem
           isCompact
           className={item.className}
-          key={"accordion-item-" + (index + 1).toString()}
+          key={index.toString()}
           aria-label={item["aria-label"]}
           title={item.title}
           textValue={item.textValue}

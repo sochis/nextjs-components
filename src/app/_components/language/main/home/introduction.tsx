@@ -3,7 +3,7 @@ import "server-only";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LangParams } from "@/types/language/language";
 import { Button } from "@nextui-org/button";
-import TextLink from "@/components/common/link/link";
+import { TextLink } from "@/components/common/link/link";
 
 export default async function Introduction({
   params,

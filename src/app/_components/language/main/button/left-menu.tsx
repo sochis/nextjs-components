@@ -10,34 +10,48 @@ export default function LeftMenu({
 }: Readonly<{
   dict: I18nParams;
 }>) {
+  const items = [
+    {
+      title: <>{dict.main.button.title}</>,
+      boxItems: [
+        {
+          areaLabel: "simple-button",
+          href: "#simple-button-section",
+          children: <>{dict.main.button.simple.title}</>,
+        },
+      ],
+    },
+    {
+      title: <>title2</>,
+      boxItems: [
+        {
+          areaLabel: "title2",
+          href: "",
+          children: <></>,
+        },
+      ],
+    },
+  ];
+
   return (
     <ScrollShadow className="h-[calc(100svh-92px)]">
       <NextUIAccordion
         showDivider={false}
         selectionMode="multiple"
-        defaultExpandedKeys={["accordion-item-1", "accordion-item-2"]}
-        accordionItems={[
-          {
-            title: <>{dict.main.button.title}</>,
-            children: (
-              <NextUIListBox
-                listBoxItems={[
-                  {
-                    key: "11",
-                    "aria-label": "nextui",
-                    href: "#simple-button-section",
-                    children: <>{dict.main.button.simple.title}</>,
-                  },
-                ]}
-              />
-            ),
-          },
-          {
-            key: "2",
-            title: "title2",
-            children: <NextUIListBox listBoxItems={[]} />,
-          },
-        ]}
+        defaultExpandedKeys={items.map((_, index) => index.toString())}
+        accordionItems={items.map((item) => ({
+          title: item.title,
+          children: (
+            <NextUIListBox
+              listBoxItems={item.boxItems.map((bi) => ({
+                key: bi.href,
+                "aria-label": bi.areaLabel,
+                href: bi.href,
+                children: bi.children,
+              }))}
+            />
+          ),
+        }))}
       />
     </ScrollShadow>
   );
