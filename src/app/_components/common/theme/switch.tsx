@@ -7,7 +7,7 @@ import { GrSystem } from "react-icons/gr";
 import { Tooltip } from "@nextui-org/react";
 import { I18nParams } from "@/types/language/language";
 
-export default function ThemeSwitch({ dict }: Readonly<{ dict: I18nParams }>) {
+export function ThemeSwitch({ dict }: Readonly<{ dict: I18nParams }>) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

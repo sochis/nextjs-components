@@ -1,6 +1,6 @@
 "use client";
 
-import ValidationInput from "@/components/common/input/input";
+import { ValidationInput } from "@/components/common/input/input";
 import { I18nParams } from "@/types/language/language";
 import { Button } from "@nextui-org/react";
 import { usePathname, useRouter } from "next/navigation";

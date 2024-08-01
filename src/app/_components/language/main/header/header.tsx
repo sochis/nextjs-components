@@ -2,11 +2,11 @@ import "server-only";
 
 import { LocaleSwitch } from "@/components/common/i18n/locale-switch";
 import { TextLink } from "@/components/common/link/link";
-import ThemeSwitch from "@/components/common/theme/switch";
+import { ThemeSwitch } from "@/components/common/theme/switch";
 import { getDictionary } from "@/i18n/dictionaries";
 import { LangParams } from "@/types/language/language";
+import { AppBar } from "@/components/common/header/header";
 import AppNavigationRail from "./navigation-rail";
-import AppBar from "@/components/common/header/header";
 
 export default async function AppHeader({
   params,

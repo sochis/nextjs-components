@@ -5,9 +5,7 @@ import { Button } from "@nextui-org/react";
 import { ReactElement, useState } from "react";
 import { NavigationRailParams } from "@/types/common/navigation-rail/navigation-rail";
 
-export default function NavigationRail(
-  props: NavigationRailParams,
-): ReactElement {
+export function NavigationRail(props: NavigationRailParams): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavigationRail = () => {

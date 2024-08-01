@@ -2,7 +2,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { ValidationInputParams } from "@/types/common/input/input";
 
-export default function ValidationInput({
+export function ValidationInput({
   isRequired,
   className,
   size,

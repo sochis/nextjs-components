@@ -1,7 +1,7 @@
 import { Chip } from "@nextui-org/react";
 import { ClickableChipParams } from "@/types/common/chip/chip";
 
-export default async function ClickableChip({
+export function ClickableChip({
   size,
   onClick,
   children,

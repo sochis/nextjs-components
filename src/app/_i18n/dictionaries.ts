@@ -1,5 +1,6 @@
-import { I18nParams } from "@/types/language/language";
 import "server-only";
+
+import { I18nParams } from "@/types/language/language";
 
 const dictionaries: { [key: string]: () => Promise<I18nParams> } = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),

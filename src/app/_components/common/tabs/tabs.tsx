@@ -1,7 +1,7 @@
 import { Tabs } from "@radix-ui/themes";
 import { RadixTabsParams } from "@/types/common/tabs/tabs";
 
-export default async function LadixTabs({
+export function LadixTabs({
   className,
   defaultValue,
   tabs,

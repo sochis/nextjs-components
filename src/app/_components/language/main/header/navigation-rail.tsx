@@ -1,7 +1,7 @@
 "use client";
 
 import { NavigationButton } from "@/components/common/button/button";
-import NavigationRail from "@/components/common/navigation-rail/navigation-rail";
+import { NavigationRail } from "@/components/common/navigation-rail/navigation-rail";
 import { I18nParams } from "@/types/language/language";
 import { usePathname, useRouter } from "next/navigation";
 import { AiOutlineCode } from "react-icons/ai";

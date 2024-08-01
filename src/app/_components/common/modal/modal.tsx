@@ -8,22 +8,32 @@ import {
 } from "@nextui-org/react";
 import { CustomModalParams } from "@/types/common/modal/modal";
 
-export default function CustomModal({
+export function CustomModal({
+  className,
+  classNames,
   isOpen,
   onOpenChange,
   header,
   children,
   footer,
   size,
+  hideCloseButton,
 }: CustomModalParams) {
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} size={size}>
+    <Modal
+      className={className}
+      classNames={classNames}
+      isOpen={isOpen}
+      onOpenChange={onOpenChange}
+      size={size}
+      hideCloseButton={hideCloseButton}
+    >
       <ModalContent>
         {(onClose) => (
           <>
             <ModalHeader className="flex flex-col gap-1">{header}</ModalHeader>
-            <ModalBody>{children}</ModalBody>
-            <ModalFooter>{footer(onClose)}</ModalFooter>
+            {children ? <ModalBody>{children(onClose)}</ModalBody> : null}
+            {footer ? <ModalFooter>{footer(onClose)}</ModalFooter> : null}
           </>
         )}
       </ModalContent>

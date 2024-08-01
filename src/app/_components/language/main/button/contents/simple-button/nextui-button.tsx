@@ -1,4 +1,4 @@
-import ClickableChip from "@/components/common/chip/chip";
+import { ClickableChip } from "@/components/common/chip/chip";
 import { NextUILink } from "@/components/common/link/link";
 import { Button, Divider } from "@nextui-org/react";
 import { AiOutlineGlobal } from "react-icons/ai";

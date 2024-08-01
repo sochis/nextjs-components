@@ -6,6 +6,7 @@ import { NextUIAccordionParams } from "@/types/common/accordion/accordion";
 
 export function NextUIAccordion({
   className,
+  itemClasses,
   defaultExpandedKeys,
   variant,
   showDivider,
@@ -17,6 +18,7 @@ export function NextUIAccordion({
     <Accordion
       defaultExpandedKeys={defaultExpandedKeys}
       className={className}
+      itemClasses={itemClasses}
       variant={variant}
       showDivider={showDivider}
       isCompact={isCompact}
@@ -24,9 +26,9 @@ export function NextUIAccordion({
     >
       {accordionItems.map((item, index) => (
         <AccordionItem
-          isCompact
+          isCompact={item.isCompact}
           className={item.className}
-          key={index.toString()}
+          key={"accordion-item-" + (index + 1).toString()}
           aria-label={item["aria-label"]}
           title={item.title}
           textValue={item.textValue}

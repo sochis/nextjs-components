@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import ReactFlow, {
   Controls,
   Background,
@@ -20,20 +13,19 @@ import ReactFlow, {
   useReactFlow,
   ReactFlowProvider,
   EdgeProps,
-  OnEdgesChange,
-  OnNodesChange,
   DefaultEdgeOptions,
   addEdge,
+  Panel,
 } from "reactflow";
 import { v4 as uuidv4 } from "uuid";
-import { I18nParams } from "@/types/language/language";
-import FirstNode from "./node-types/first-node";
-import MiddleNode from "./node-types/middle-node";
-import LastNode from "./node-types/last-node";
-import InputEdge from "./edge-types/input-edge";
+import FirstNode from "./node-types/multi-language/first";
+import MiddleNode from "./node-types/multi-language/middle";
+import LastNode from "./node-types/multi-language/last";
+import { InputEdge } from "./edge-types/multi-language/input";
 import "reactflow/dist/style.css";
+import { ReactFlowParams } from "@/types/common/flow/flow";
 
-export function Flow({
+function MultiLanguageFlow({
   dict,
   nodes,
   edges,
@@ -41,41 +33,32 @@ export function Flow({
   setEdges,
   onNodesChange,
   onEdgesChange,
-}: Readonly<{
-  dict: I18nParams;
-  nodes: Node[];
-  edges: Edge[];
-  onNodesChange: OnNodesChange;
-  onEdgesChange: OnEdgesChange;
-  setNodes: Dispatch<
-    SetStateAction<Node<{ label: string }, string | undefined>[]>
-  >;
-  setEdges: Dispatch<SetStateAction<Edge<any>[]>>;
-}>) {
+  panel,
+}: Readonly<ReactFlowParams>) {
   // Node configs
   useEffect(() => {
     nodes
-      .filter((node) => node.id == "first-node")
-      .forEach((node) => {
+      .filter((node: { id: string }) => node.id == "first")
+      .forEach((node: { data: { placeholder: any } }) => {
         node.data.placeholder = dict.common.flow.input_placeholder;
       });
     // It is necessary to insert a setter when information is retrieved from the DB, such as when updating.
-    nodes.forEach((node) => {
+    nodes.forEach((node: Node) => {
       node.data.setNodes = setNodes;
     });
-    edges.forEach((edge) => {
+    edges.forEach((edge: Edge) => {
       edge.data.setEdges = setEdges;
     });
   }, []);
 
   const nodeTypes = useMemo(
-    () => ({ first: FirstNode, middle: MiddleNode, last: LastNode }),
+    () => ({ first: FirstNode, question: MiddleNode, answer: LastNode }),
     [],
   );
 
   // Edge configs
   const edgeTypes = useMemo(
-    () => ({ input: InputEdge as React.FC<EdgeProps> }),
+    () => ({ answer: InputEdge as React.FC<EdgeProps> }),
     [],
   );
 
@@ -88,7 +71,7 @@ export function Flow({
   const onEdgeUpdate = useCallback(
     (oldEdge: Edge, newConnection: Connection) => {
       edgeUpdateSuccessful.current = true;
-      setEdges((els) => reconnectEdge(oldEdge, newConnection, els));
+      setEdges((els: Edge[]) => reconnectEdge(oldEdge, newConnection, els));
     },
     [],
   );
@@ -96,7 +79,9 @@ export function Flow({
   const onEdgeUpdateEnd = useCallback(
     (_: MouseEvent | TouchEvent, edge: Edge<any>): void => {
       if (!edgeUpdateSuccessful.current) {
-        setEdges((eds) => eds.filter((e) => e.id !== edge.id));
+        setEdges((eds: any[]) =>
+          eds.filter((e: { id: string }) => e.id !== edge.id),
+        );
       }
 
       edgeUpdateSuccessful.current = true;
@@ -107,13 +92,14 @@ export function Flow({
   const onConnect = useCallback(
     (connection: DefaultEdgeOptions & Connection) => {
       connection.data = {
-        value: "",
+        value_en: "",
+        value_ja: "",
         placeholder: dict.common.flow.input_placeholder,
         setEdges: setEdges,
       };
-      connection.type = "input";
+      connection.type = "answer";
 
-      setEdges((eds) => addEdge(connection, eds));
+      setEdges((eds: Edge[]) => addEdge(connection, eds));
     },
     [],
   );
@@ -137,11 +123,11 @@ export function Flow({
       }
 
       let id, placeholder;
-      if (type === "middle") {
-        id = `middle_node_${uuidv4()}`;
+      if (type === "question") {
+        id = `question_node_${uuidv4()}`;
         placeholder = dict.common.flow.input_placeholder;
-      } else if (type === "last") {
-        id = `last_node_${uuidv4()}`;
+      } else if (type === "answer") {
+        id = `answer_node_${uuidv4()}`;
         placeholder = dict.common.flow.input_placeholder;
       } else {
         id = uuidv4();
@@ -167,13 +153,13 @@ export function Flow({
   );
 
   // Minimap config
-  const nodeColor = (node: any) => {
+  const nodeColor = (node: Node) => {
     switch (node.type) {
       case "first":
         return "#CCDEFF";
-      case "middle":
+      case "question":
         return "#E0E0E0";
-      case "last":
+      case "answer":
         return "#C4FFBC";
       default:
         return "#7E7E7E";
@@ -208,11 +194,16 @@ export function Flow({
         pannable
         nodeColor={nodeColor}
       />
+      {panel !== undefined ? (
+        <Panel className={panel.className} position={panel.position}>
+          {panel.children}
+        </Panel>
+      ) : null}
     </ReactFlow>
   );
 }
 
-export default function FlowWithProvider({
+export function MLFlowWithProvider({
   dict,
   nodes,
   edges,
@@ -220,20 +211,11 @@ export default function FlowWithProvider({
   onEdgesChange,
   setNodes,
   setEdges,
-}: Readonly<{
-  dict: I18nParams;
-  nodes: Node[];
-  edges: Edge[];
-  onNodesChange: OnNodesChange;
-  onEdgesChange: OnEdgesChange;
-  setNodes: Dispatch<
-    SetStateAction<Node<{ label: string }, string | undefined>[]>
-  >;
-  setEdges: Dispatch<SetStateAction<Edge<any>[]>>;
-}>) {
+  panel,
+}: Readonly<ReactFlowParams>) {
   return (
     <ReactFlowProvider>
-      <Flow
+      <MultiLanguageFlow
         dict={dict}
         nodes={nodes}
         edges={edges}
@@ -241,6 +223,7 @@ export default function FlowWithProvider({
         onEdgesChange={onEdgesChange}
         setNodes={setNodes}
         setEdges={setEdges}
+        panel={panel}
       />
     </ReactFlowProvider>
   );

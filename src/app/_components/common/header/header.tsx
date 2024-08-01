@@ -1,7 +1,7 @@
 import { Divider } from "@nextui-org/react";
 import "server-only";
 
-export default async function AppBar({
+export function AppBar({
   children,
 }: Readonly<{
   children: React.ReactNode;

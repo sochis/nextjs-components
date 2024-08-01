@@ -1,9 +1,8 @@
 "use client";
 
 import { I18nParams } from "@/types/language/language";
-import LadixTabs from "@/components/common/tabs/tabs";
+import { LadixTabs } from "@/components/common/tabs/tabs";
 import NextUIButtonContent from "@/components/language/main/button/contents/simple-button/nextui-button";
-import { useRef } from "react";
 
 export default function SimpleButton({
   dict,

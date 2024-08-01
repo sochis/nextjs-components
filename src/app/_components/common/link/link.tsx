@@ -17,7 +17,7 @@ export function TextLink({
   );
 }
 
-export async function NextUILink({
+export function NextUILink({
   className,
   isExternal,
   href,
