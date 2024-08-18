@@ -31,16 +31,19 @@
       "description4": "さあ、探しに行きましょう。",
       "start_button": "始める"
     },
-    "button": {
-      "title": "ボタン",
-      "description": "ボタンコンポーネントの一覧を表示します。",
-      "simple": {
-        "title": "シンプルなボタン"
-      },
-      "radio": {
-        "title": "ラジオボタン",
-        "description": "ラジオボタンコンポーネントの一覧を表示します。",
-        "simple": { "title": "シンプルなラジオボタン" }
+    "components": {
+      "top": "タイトル",
+      "button": {
+        "title": "ボタン",
+        "description": "ボタンコンポーネントの一覧を表示します。",
+        "simple": {
+          "title": "シンプルなボタン"
+        },
+        "radio": {
+          "title": "ラジオボタン",
+          "description": "ラジオボタンコンポーネントの一覧を表示します。",
+          "simple": { "title": "ラジオグループ" }
+        }
       }
     }
   },

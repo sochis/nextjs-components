@@ -31,16 +31,19 @@
       "description4": "Let's go find it.",
       "start_button": "Start"
     },
-    "button": {
-      "title": "Button",
-      "description": "Here is a list of the button components.",
-      "simple": {
-        "title": "Simple Button"
-      },
-      "radio": {
-        "title": "Radio Button",
-        "description": "Here is a list of the radio button components.",
-        "simple": { "title": "Simple Radio Button" }
+    "components": {
+      "top": "タイトル",
+      "button": {
+        "title": "Button",
+        "description": "Here is a list of the button components.",
+        "simple": {
+          "title": "Simple Button"
+        },
+        "radio": {
+          "title": "Radio Button",
+          "description": "Here is a list of the radio button components.",
+          "simple": { "title": "Radio Group" }
+        }
       }
     }
   },

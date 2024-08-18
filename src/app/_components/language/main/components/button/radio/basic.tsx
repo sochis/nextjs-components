@@ -2,6 +2,7 @@
 
 import { I18nParams } from "@/types/language/language";
 import { LadixTabs } from "@/components/common/tabs/tabs";
+import NextUIRadioContent from "./basic/nextui-radio";
 
 export default function SimpleRadioButton({
   dict,
@@ -11,10 +12,10 @@ export default function SimpleRadioButton({
   return (
     <div className="flex flex-col gap-y-3">
       <p className="font-medium text-2xl">
-        {dict.main.button.radio.simple.title}
+        {dict.main.components.button.radio.simple.title}
       </p>
       <div
-        id="simple-button-section"
+        id="radio-group-section"
         className="border-1 rounded-lg dark:border-neutral-700 scroll-mt-28"
       >
         <LadixTabs
@@ -24,7 +25,7 @@ export default function SimpleRadioButton({
             {
               value: "nextui",
               title: <>Next UI</>,
-              content: <></>,
+              content: <NextUIRadioContent />,
             },
             { value: "mui", title: <>Material UI</>, content: <>test2</> },
             { value: "radixui", title: <>Radix UI</>, content: <>test3</> },

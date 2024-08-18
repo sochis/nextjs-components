@@ -14,20 +14,28 @@ export default function LeftMenu({
 }>) {
   const items = [
     {
-      title: <>{dict.main.button.title}</>,
+      title: <>{dict.main.components.button.title}</>,
       subItems: [
         {
+          href: `/${params.language}/components/button/#title`,
+          text: <>{dict.main.components.top}</>,
+        },
+        {
           href: `/${params.language}/components/button/#simple-button-section`,
-          text: <>{dict.main.button.simple.title}</>,
+          text: <>{dict.main.components.button.simple.title}</>,
         },
       ],
     },
     {
-      title: <>{dict.main.button.radio.title}</>,
+      title: <>{dict.main.components.button.radio.title}</>,
       subItems: [
         {
-          href: `/${params.language}/components/button/radio/#simple-radio-section`,
-          text: <>{dict.main.button.radio.simple.title}</>,
+          href: `/${params.language}/components/button/radio/#title`,
+          text: <>{dict.main.components.top}</>,
+        },
+        {
+          href: `/${params.language}/components/button/radio/#radio-group-section`,
+          text: <>{dict.main.components.button.radio.simple.title}</>,
         },
       ],
     },

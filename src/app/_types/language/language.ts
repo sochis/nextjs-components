@@ -37,16 +37,19 @@ export interface I18nParams {
       description4: string;
       start_button: string;
     };
-    button: {
-      title: string;
-      description: string;
-      simple: {
-        title: string;
-      };
-      radio: {
+    components: {
+      top: string;
+      button: {
         title: string;
         description: string;
-        simple: { title: string };
+        simple: {
+          title: string;
+        };
+        radio: {
+          title: string;
+          description: string;
+          simple: { title: string };
+        };
       };
     };
   };

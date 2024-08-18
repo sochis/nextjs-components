@@ -12,8 +12,10 @@ export default async function Button({
 
   return (
     <div className="px-8 py-6 flex flex-col gap-y-8">
-      <p className="font-semibold text-3xl">{dict.main.button.radio.title}</p>
-      <p>{dict.main.button.radio.description}</p>
+      <p id="title" className="font-semibold text-3xl scroll-mt-28">
+        {dict.main.components.button.radio.title}
+      </p>
+      <p>{dict.main.components.button.radio.description}</p>
       <Divider />
       <SimpleRadioButton dict={dict} />
     </div>
