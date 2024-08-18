@@ -6,6 +6,7 @@ import { MdLightMode, MdModeNight } from "react-icons/md";
 import { GrSystem } from "react-icons/gr";
 import { Tooltip } from "@nextui-org/react";
 import { I18nParams } from "@/types/language/language";
+import CommonTooltip from "../tooltip/tooltip";
 
 export function ThemeSwitch({ dict }: Readonly<{ dict: I18nParams }>) {
   const [mounted, setMounted] = useState(false);
@@ -23,23 +24,23 @@ export function ThemeSwitch({ dict }: Readonly<{ dict: I18nParams }>) {
   return (
     <div>
       {theme === "light" ? (
-        <Tooltip size="sm" content={dict.main.header.theme.light}>
+        <CommonTooltip content={dict.main.header.theme.light}>
           <button onClick={() => setTheme("dark")}>
             <MdLightMode />
           </button>
-        </Tooltip>
+        </CommonTooltip>
       ) : theme === "dark" ? (
-        <Tooltip size="sm" content={dict.main.header.theme.dark}>
+        <CommonTooltip content={dict.main.header.theme.dark}>
           <button onClick={() => setTheme("system")}>
             <MdModeNight />
           </button>
-        </Tooltip>
+        </CommonTooltip>
       ) : (
-        <Tooltip size="sm" content={dict.main.header.theme.device}>
+        <CommonTooltip content={dict.main.header.theme.device}>
           <button onClick={() => setTheme("light")}>
             <GrSystem />
           </button>
-        </Tooltip>
+        </CommonTooltip>
       )}
     </div>
   );
