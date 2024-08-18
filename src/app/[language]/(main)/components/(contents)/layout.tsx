@@ -1,7 +1,7 @@
 import "server-only";
 
 import { LangParams } from "@/types/language/language";
-import LeftMenu from "@/components/language/main/button/left-menu";
+import LeftMenu from "@/components/language/main/components/button/left-menu";
 import { getDictionary } from "@/i18n/dictionaries";
 
 export default async function Layout({
@@ -17,7 +17,7 @@ export default async function Layout({
     <div className="flex h-[calc(100vh-48px)] justify-center">
       <div className="w-[1200px] py-4">
         <aside className="fixed w-72">
-          <LeftMenu dict={dict} />
+          <LeftMenu dict={dict} params={params} />
         </aside>
         <main className="ml-72 flex-grow">{children}</main>
       </div>

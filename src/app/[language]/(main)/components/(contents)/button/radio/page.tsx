@@ -3,7 +3,7 @@ import "server-only";
 import { LangParams } from "@/types/language/language";
 import { Divider } from "@nextui-org/react";
 import { getDictionary } from "@/i18n/dictionaries";
-import SimpleButton from "@/components/language/main/button/contents/simple-button";
+import SimpleRadioButton from "@/components/language/main/components/button/radio/basic";
 
 export default async function Button({
   params,
@@ -12,10 +12,10 @@ export default async function Button({
 
   return (
     <div className="px-8 py-6 flex flex-col gap-y-8">
-      <p className="font-semibold text-3xl">{dict.main.button.title}</p>
-      <p>{dict.main.button.description}</p>
+      <p className="font-semibold text-3xl">{dict.main.button.radio.title}</p>
+      <p>{dict.main.button.radio.description}</p>
       <Divider />
-      <SimpleButton dict={dict} />
+      <SimpleRadioButton dict={dict} />
     </div>
   );
 }

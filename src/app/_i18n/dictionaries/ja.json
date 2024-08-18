@@ -1,6 +1,6 @@
 {
   "product": {
-    "title": "Component samples",
+    "title": "Component Samples",
     "landing_title": "Conponents Samples"
   },
   "common": {
@@ -36,6 +36,11 @@
       "description": "ボタンコンポーネントの一覧を表示します。",
       "simple": {
         "title": "シンプルなボタン"
+      },
+      "radio": {
+        "title": "ラジオボタン",
+        "description": "ラジオボタンコンポーネントの一覧を表示します。",
+        "simple": { "title": "シンプルなラジオボタン" }
       }
     }
   },

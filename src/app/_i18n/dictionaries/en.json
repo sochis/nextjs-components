@@ -1,6 +1,6 @@
 {
   "product": {
-    "title": "Component samples",
+    "title": "Component Samples",
     "landing_title": "Conponents Samples"
   },
   "common": {
@@ -36,6 +36,11 @@
       "description": "Here is a list of the button components.",
       "simple": {
         "title": "Simple Button"
+      },
+      "radio": {
+        "title": "Radio Button",
+        "description": "Here is a list of the radio button components.",
+        "simple": { "title": "Simple Radio Button" }
       }
     }
   },

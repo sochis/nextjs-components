@@ -26,7 +26,7 @@ export default async function Introduction({
       </div>
       <div>
         <Button radius="full">
-          <TextLink className="text-sm" href={"button"}>
+          <TextLink className="text-sm" href={`/${params.language}/components`}>
             {dict.main.home.start_button}
           </TextLink>
         </Button>

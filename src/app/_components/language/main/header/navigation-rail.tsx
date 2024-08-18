@@ -24,7 +24,7 @@ export default function AppNavigationRail({
       <NavigationButton
         icon={AiOutlineCode}
         text={dict.common.navigation_rail.automation_title}
-        onClick={() => navigatePage("button")}
+        onClick={() => navigatePage("components/button")}
       />
     </NavigationRail>
   );

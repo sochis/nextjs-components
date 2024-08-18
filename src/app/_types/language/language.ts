@@ -43,6 +43,11 @@ export interface I18nParams {
       simple: {
         title: string;
       };
+      radio: {
+        title: string;
+        description: string;
+        simple: { title: string };
+      };
     };
   };
   landing: {

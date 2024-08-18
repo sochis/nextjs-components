@@ -17,7 +17,9 @@ export default async function AppHeader({
     <AppBar>
       <div className="flex items-center gap-x-10">
         <AppNavigationRail dict={dict} />
-        <TextLink href={"/"}>{dict.product.title}</TextLink>
+        <TextLink className="font-bold" href={"/"}>
+          {dict.product.title}
+        </TextLink>
       </div>
       <div className="flex items-center gap-x-5">
         <LocaleSwitch params={{ language: params.language }} dict={dict} />
