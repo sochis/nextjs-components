@@ -13,32 +13,28 @@ export default function NextUIRadioContent() {
     <div className="flex flex-col gap-y-6 pt-3">
       <div className="flex flex-col gap-y-6">
         <div className="flex flex-row flex-wrap gap-8">
-          <RadioGroup label="Select your favorite city">
+          <RadioGroup label="Basic Radio Button">
             <Radio value="buenos-aires">Buenos Aires</Radio>
             <Radio value="sydney">Sydney</Radio>
             <Radio value="san-francisco">San Francisco</Radio>
             <Radio value="london">London</Radio>
             <Radio value="tokyo">Tokyo</Radio>
           </RadioGroup>
-          <RadioGroup label="Select your favorite city" isDisabled>
+          <RadioGroup label="Disable" isDisabled>
             <Radio value="buenos-aires">Buenos Aires</Radio>
             <Radio value="sydney">Sydney</Radio>
             <Radio value="san-francisco">San Francisco</Radio>
             <Radio value="london">London</Radio>
             <Radio value="tokyo">Tokyo</Radio>
           </RadioGroup>
-          <RadioGroup
-            label="Select your favorite city"
-            color="secondary"
-            defaultValue="london"
-          >
+          <RadioGroup label="Default" color="secondary" defaultValue="london">
             <Radio value="buenos-aires">Buenos Aires</Radio>
             <Radio value="sydney">Sydney</Radio>
             <Radio value="san-francisco">San Francisco</Radio>
             <Radio value="london">London</Radio>
             <Radio value="tokyo">Tokyo</Radio>
           </RadioGroup>
-          <RadioGroup label="Select your favorite city" color="warning">
+          <RadioGroup label="Description" color="warning">
             <Radio value="buenos-aires" description="The capital of Argentina">
               Buenos Aires
             </Radio>
@@ -53,7 +49,7 @@ export default function NextUIRadioContent() {
             </Radio>
           </RadioGroup>
           <RadioGroup
-            label="Select your favorite city"
+            label="Controlled"
             value={selected}
             onValueChange={setSelected}
           >
@@ -64,7 +60,7 @@ export default function NextUIRadioContent() {
             <Radio value="tokyo">Tokyo</Radio>
           </RadioGroup>
           <RadioGroup
-            label="Select your favorite city"
+            label="Validate"
             value={selected}
             isInvalid={isInvalid}
             onValueChange={setSelected}
@@ -76,10 +72,7 @@ export default function NextUIRadioContent() {
             <Radio value="tokyo">Tokyo</Radio>
           </RadioGroup>
           <p className="text-default-500 text-small">Selected: {selected}</p>
-          <RadioGroup
-            label="Select your favorite city"
-            orientation="horizontal"
-          >
+          <RadioGroup label="Horizontal" orientation="horizontal">
             <Radio value="buenos-aires">Buenos Aires</Radio>
             <Radio value="sydney">Sydney</Radio>
             <Radio value="san-francisco">San Francisco</Radio>

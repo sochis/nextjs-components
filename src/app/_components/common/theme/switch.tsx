@@ -4,7 +4,6 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { MdLightMode, MdModeNight } from "react-icons/md";
 import { GrSystem } from "react-icons/gr";
-import { Tooltip } from "@nextui-org/react";
 import { I18nParams } from "@/types/language/language";
 import CommonTooltip from "../tooltip/tooltip";
 

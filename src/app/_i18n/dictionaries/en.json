@@ -32,7 +32,7 @@
       "start_button": "Start"
     },
     "components": {
-      "top": "タイトル",
+      "top": "Title",
       "button": {
         "title": "Button",
         "description": "Here is a list of the button components.",
