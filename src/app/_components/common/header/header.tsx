@@ -1,5 +1,6 @@
-import { Divider } from "@nextui-org/react";
 import "server-only";
+
+import { Divider } from "@nextui-org/react";
 
 export function AppBar({
   children,

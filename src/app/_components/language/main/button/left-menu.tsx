@@ -34,13 +34,15 @@ export default function LeftMenu({
   ];
 
   return (
-    <ScrollShadow className="h-[calc(100svh-92px)]">
+    <ScrollShadow className="h-[calc(100svh-92px)] py-4">
       <NextUIAccordion
+        isCompact
         showDivider={false}
         selectionMode="multiple"
         defaultExpandedKeys={items.map((_, index) => index.toString())}
         accordionItems={items.map((item) => ({
           title: item.title,
+          isCompact: true,
           children: (
             <NextUIListBox
               listBoxItems={item.boxItems.map((bi) => ({

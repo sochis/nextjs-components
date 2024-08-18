@@ -11,7 +11,7 @@ export default async function Layout({
   params: LangParams;
 }>) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen h-full overflow-y-auto">
       <AppHeader params={params} />
       {children}
     </div>

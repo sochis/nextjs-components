@@ -14,11 +14,13 @@ export default async function Layout({
   const dict = await getDictionary(params.language);
 
   return (
-    <main className="flex flex-row pl-24 py-4">
-      <div className="w-1/6">
-        <LeftMenu dict={dict} />
+    <div className="flex h-[calc(100vh-48px)] justify-center">
+      <div className="w-[1200px] py-4">
+        <aside className="fixed w-72">
+          <LeftMenu dict={dict} />
+        </aside>
+        <main className="ml-72 flex-grow">{children}</main>
       </div>
-      <div className="w-5/6">{children}</div>
-    </main>
+    </div>
   );
 }
