@@ -26,8 +26,8 @@ export function NextUIRadioGroup({
       orientation={orientation}
       onValueChange={onValueChange}
     >
-      {radios.map((radio) => (
-        <Radio value={radio.value} description={radio.description}>
+      {radios.map((radio, index) => (
+        <Radio key={index} value={radio.value} description={radio.description}>
           {radio.children}
         </Radio>
       ))}

@@ -9,7 +9,6 @@ import { AppBar } from "@/components/common/header/header";
 import AppNavigationRail from "./navigation-rail";
 import { ImGithub } from "react-icons/im";
 import CommonTooltip from "@/components/common/tooltip/tooltip";
-
 export default async function AppHeader({
   params,
 }: Readonly<{ params: LangParams }>) {
@@ -19,7 +18,7 @@ export default async function AppHeader({
     <AppBar>
       <div className="flex items-center justify-center gap-x-10">
         <AppNavigationRail dict={dict} />
-        <TextLink className="font-bold" href={"/"}>
+        <TextLink className="font-bold" href={`/${params.language}`}>
           {dict.product.title}
         </TextLink>
       </div>
